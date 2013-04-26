@@ -21,6 +21,12 @@ namespace Scriptcs
         public IEnumerable<string> GetAssemblyNames()
         {
             var packageDir = _fileSystem.CurrentDirectory + @"\" + "packages";
+            
+            if (!Directory.Exists(packageDir))
+            {
+                return new List<string>();
+            }
+            
             var folders = new List<string>();
             var files = new List<string>();
             foreach (var file in Directory.EnumerateFiles(packageDir, @"*.dll", SearchOption.AllDirectories))

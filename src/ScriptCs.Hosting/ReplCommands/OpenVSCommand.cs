@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ScriptCs.Contracts;
 
@@ -27,7 +28,19 @@ namespace ScriptCs.Hosting.ReplCommands
                 return null;
             }
             var fs = repl.FileSystem;
-            var launcher = _writer.WriteSolution(fs, (string) args[0], new VisualStudioSolution());
+            var version = "2013";
+            if (args.Length == 2)
+            {
+                int ver = int.Parse(version);
+                 
+                if (ver <= 2013 && ver >= 2020)
+                {
+                    throw new ArgumentException("Invalid version number");
+                }
+                version = (string) args[1];
+            }
+            
+            var launcher = _writer.WriteSolution(fs, (string) args[0], new VisualStudioSolution(version));
             _console.WriteLine("Opening Visual Studio");
             LaunchSolution(launcher);
             return null;
@@ -45,7 +58,10 @@ namespace ScriptCs.Hosting.ReplCommands
 
         public string Description
         {
-            get { return "Opens a script to edit/debug in Visual Studio"; }
+            get { 
+                var description = "Opens a script to edit/debug in Visual Studio.{0}  Arg 1 - csx file to launch{0}  Arg 2 - Visual Studio Version (2013, 2015) [optional]";
+                return string.Format(description, Environment.NewLine);
+            }
         }
 
         public string CommandName

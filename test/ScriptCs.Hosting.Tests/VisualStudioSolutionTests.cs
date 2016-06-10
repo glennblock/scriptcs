@@ -12,9 +12,10 @@ namespace ScriptCs.Hosting.Tests
 {
     public class VisualStudioSolutionTests
     {
+        private const string Version = "2013";
         public class TheConstructor
         {
-            private VisualStudioSolution _solution = new VisualStudioSolution();
+            private VisualStudioSolution _solution = new VisualStudioSolution(Version);
 
             [Fact]
             public void ShouldInitializeVariables()
@@ -25,7 +26,7 @@ namespace ScriptCs.Hosting.Tests
             }
 
             [Fact]
-            public void ShouldAppendTheHeader()
+            public void ShouldAppendTheHeaderWithVersionThatIsSpecified()
             {
                 var headerBuilder = new StringBuilder();
                 headerBuilder.AppendLine("Microsoft Visual Studio Solution File, Format Version 12.00");
@@ -39,7 +40,7 @@ namespace ScriptCs.Hosting.Tests
         public class TheAddGlobalHeaderMethod
         {
             private Guid _projectGuid = Guid.NewGuid();
-            private VisualStudioSolution _builder = new VisualStudioSolution();
+            private VisualStudioSolution _builder = new VisualStudioSolution(Version);
 
             [Fact]
             public void ShouldAppendTheGlobalHeader()
@@ -65,7 +66,7 @@ namespace ScriptCs.Hosting.Tests
             [Fact]
             public void ShouldAppenedGlobalSectionEntriesForEachProject()
             {
-                var builder = new VisualStudioSolution();
+                var builder = new VisualStudioSolution(Version);
 
                 var nestedItems = new List<ProjectItem>();
                 var a = Guid.NewGuid();
@@ -88,7 +89,7 @@ namespace ScriptCs.Hosting.Tests
 
         public class TheAddScriptcsProjectMethod
         {
-            private VisualStudioSolution _builder = new VisualStudioSolution();
+            private VisualStudioSolution _builder = new VisualStudioSolution(Version);
             private const string _scriptcsPath = "scriptcs.exe";
             private const string _workingPath = "working";
             private const string _args = "test.csx";
@@ -160,7 +161,7 @@ namespace ScriptCs.Hosting.Tests
             [Fact]
             public void BuildsTheSolution()
             {
-                var builder = new VisualStudioSolution();
+                var builder = new VisualStudioSolution("2013");
                 builder._header = new StringBuilder("A");
                 builder._projects = new StringBuilder("B");
                 builder._global = new StringBuilder("C");

@@ -13,18 +13,18 @@ namespace ScriptCs.Hosting
         internal StringBuilder _projects;
         internal StringBuilder _global;
 
-        public VisualStudioSolution()
+        public VisualStudioSolution(string version)
         {
             _header = new StringBuilder();
             _projects = new StringBuilder();
             _global = new StringBuilder();
-            AddHeader();
+            AddHeader(version);
         }
 
-        public void AddHeader()
+        public void AddHeader(string version)
         {
             _header.AppendLine("Microsoft Visual Studio Solution File, Format Version 12.00");
-            _header.AppendLine("# Visual Studio 2013");
+            _header.AppendFormat("# Visual Studio {0}{1}", version, Environment.NewLine);
             _header.AppendLine("VisualStudioVersion = 12.0.30501.0");
             _header.AppendLine("MinimumVisualStudioVersion = 10.0.40219.1");
         }

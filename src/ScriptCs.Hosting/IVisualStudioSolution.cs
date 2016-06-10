@@ -5,7 +5,7 @@ namespace ScriptCs.Contracts
 {
     public interface IVisualStudioSolution
     {
-        void AddHeader();
+        void AddHeader(string version);
         void AddScriptcsProject(string scriptcsPath, string workingPath, string args, bool attach, Guid projectGuid);
         void AddProject(string path, string name, Guid guid, string[] files);
         void AddGlobalHeader(Guid projectGuid);

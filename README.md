@@ -12,7 +12,7 @@ scriptcs frees you from Visual Studio, without sacrificing the advantages of a s
 * Write C# in your favorite text editor.
 * Use NuGet to manage your dependencies.
 * The relaxed C# scripting syntax means you can write and execute an application with only one line of code. 
-* Script Packs allow you to bootstrap the environment for new scripts, further reduces the amount of code necessary to take advantage of your favorite C# frameworks.
+* Script Packs allow you to bootstrap the environment for new scripts, further reduces the amount of code necessary to take advantage of your favorite C# frameworks.aaaaaaaa
 
 
 ## Getting scriptcs

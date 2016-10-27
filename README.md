@@ -16,7 +16,7 @@ scriptcs frees you from Visual Studio, without sacrificing the advantages of a s
 
 
 ## Getting scriptcs
-
+aaaaaaa
 Releases and nightly builds should be installed using [Chocolatey](http://chocolatey.org/). To install Chocolatey, execute the following command in your command prompt:
 
     @powershell -NoProfile -ExecutionPolicy Unrestricted -Command "iex ((New-Object Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%systemdrive%\chocolatey\bin

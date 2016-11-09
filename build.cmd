@@ -5,7 +5,7 @@ set EnableNuGetPackageRestore=true
 
 if exist artifacts goto Build
 mkdir artifacts
-
+aaaaaa
 :Build
 %WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild Build\Build.proj /nologo /m /v:M %* /fl /flp:LogFile=artifacts\msbuild.log;Verbosity=Detailed;DetailedSummary /nr:false 
 

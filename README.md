@@ -5,8 +5,8 @@
 
 scriptcs makes it easy to write and execute C# with a simple text editor.
 
-While Visual Studio, and other IDEs, are powerful tools, they can sometimes hinder productivity more than they promote it. You don’t always need, or want, the overhead of a creating a new solution or project. Sometimes you want to just type away in your favorite text editor.qqqqqqqqqq
-
+While Visual Studio, and other IDEs, aaaaare powerful tools, they can sometimes hinder productivity more than they promote it. You don’t always need, or want, the overhead of a creating a new solution or project. Sometimes you want to just type away in your favorite text editor.qqqqqqqqqq
+aaaaaa
 scriptcs frees you from Visual Studio, without sacrificing the advantages of a strongly-typed language. 
 
 * Write C# in your favorite text editor.

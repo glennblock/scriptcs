@@ -282,8 +282,4 @@ aaaaa
 
 [Apache 2 License](https://github.com/scriptcs/scriptcs/blob/master/LICENSE.md)
 
-blagagagaagqqqqqqqqqqqqqqqq
-aaaaaaaaaa
-aaaaaaa
-aaaaaaaaa
-hi matt
+Hi DJ
